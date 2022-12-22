@@ -1,39 +1,22 @@
 #include "main.h"
+
 /**
- * print_number - print an int numbers.
- * @n: number tested
- * Return: Always 0.
+ * print_number - Prints an integer.
+ * @n: The integer to be printed.
  */
+
 void print_number(int n)
 {
-	int dig = 0, tend = 1, iter = 1;
-	unsigned int abs = n, numch, num;
+	unsigned int num = n;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		abs = -n;
+		num = -num;
 	}
-	else
-	{
-		abs = n;
-	}
-	num = abs;
 
-	while (num > 0)
-	{
-		num /= 10;
-		dig++;
-	}
-	while (iter < dig)
-	{
-		tend *= 10;
-		iter++;
-	}
-	while (tend >= 1)
-	{
-		numch = (abs / tend) % 10;
-		_putchar(numch + '0');
-		tend /= 10;
-	}
+	if ((num / 10) > 0)
+		print_number(num / 10);
+
+	_putchar((num % 10) + '0');
 }
