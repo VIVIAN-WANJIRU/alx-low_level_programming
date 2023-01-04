@@ -1,1 +1,1 @@
-this is a project for functions of C libraries, using pointers and arrays.
+This directory contains C code on the use of pointers, arrays and strings.
